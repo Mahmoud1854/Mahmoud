@@ -635,7 +635,7 @@ main {
 }
 
 .project-card {
-  background-color: var(bg-card);
+  background-color: var(--bg-card);
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--border-color);
