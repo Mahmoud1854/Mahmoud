@@ -1,0 +1,42 @@
+
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* --- Dark Mode (الأساسي) --- */
+  --bg-primary: #0f172a;       /* أزرق كحلي غامق جداً */
+  --bg-secondary: #1e293b;     /* أزرق أفتح شوية للسكاشن */
+  --bg-card: #1e293b;          /* خلفية الكروت */
+  --text-primary: #edf4fa;     /* أبيض مائل للزرقة */
+  --text-secondary: #94a3b8;   /* رمادي أزرق للنصوص الهادية */
+  --accent-color: #1e293b;     /* الأزرق الزاهي (الأساسي) */
+  --accent-hover: #2563eb;     /* أزرق أغمق عند الماوس */
+  --border-color: #334155;     /* حدود زرقاء خفيفة */
+  --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="light"] {
+  /* --- Light Mode --- */
+  --bg-primary: #f0f9ff;     
+  --bg-secondary: #ffffff;    
+  --bg-card: #ffffff;
+  --text-primary: #0f172a;    
+  --text-secondary: #475569;   
+  --accent-color: #0284c7;     
+  --accent-hover: #0369a1;
+  --border-color: #cfe7f7; 
+  --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+/* التنسيقات العامة */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: all 0.3s ease; /* عشان النقلة بين الألوان تبقى ناعمة */
+}
