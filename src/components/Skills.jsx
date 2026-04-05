@@ -1,8 +1,19 @@
+import { useState } from 'react';
+
+const FILTER_TABS = [
+  { id: 'all', label: 'All' },
+  { id: 'basics', label: 'Basics' },
+  { id: 'front', label: 'Front-end' },
+  { id: 'deploy', label: 'Deploy' },
+];
 
 const Skills = () => {
+  const [activeFilter, setActiveFilter] = useState('all');
+
   const skills = [
     {
       name: 'C++',
+      category: 'basics',
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="256" height="288" preserveAspectRatio="xMidYMid" viewBox="0 0 256 288"><path fill="#649AD2" d="M255.987 84.59c-.002-4.837-1.037-9.112-3.13-12.781-2.054-3.608-5.133-6.632-9.261-9.023-34.08-19.651-68.195-39.242-102.264-58.913-9.185-5.303-18.09-5.11-27.208.27-13.565 8-81.48 46.91-101.719 58.632C4.071 67.6.015 74.984.013 84.58 0 124.101.013 163.62 0 203.141c0 4.73.993 8.923 2.993 12.537 2.056 3.717 5.177 6.824 9.401 9.269 20.24 11.722 88.164 50.63 101.726 58.631 9.121 5.382 18.027 5.575 27.215.27 34.07-19.672 68.186-39.262 102.272-58.913 4.224-2.444 7.345-5.553 9.401-9.267 1.997-3.614 2.992-7.806 2.992-12.539 0 0 0-79.018-.013-118.539"/><path fill="#004482" d="m128.392 143.476-125.4 72.202c2.057 3.717 5.178 6.824 9.402 9.269 20.24 11.722 88.164 50.63 101.726 58.631 9.121 5.382 18.027 5.575 27.215.27 34.07-19.672 68.186-39.262 102.272-58.913 4.224-2.444 7.345-5.553 9.401-9.267l-124.616-72.192"/><path fill="#1A4674" d="M91.25 164.863c7.297 12.738 21.014 21.33 36.75 21.33 15.833 0 29.628-8.7 36.888-21.576l-36.496-21.141-37.142 21.387"/><path fill="#01589C" d="M255.987 84.59c-.002-4.837-1.037-9.112-3.13-12.781l-124.465 71.667 124.616 72.192c1.997-3.614 2.99-7.806 2.992-12.539 0 0 0-79.018-.013-118.539"/><path fill="#FFF" d="M249.135 148.636h-9.738v9.74h-9.74v-9.74h-9.737V138.9h9.737v-9.738h9.74v9.738h9.738v9.737ZM128 58.847c31.135 0 58.358 16.74 73.17 41.709l.444.759-37.001 21.307c-7.333-12.609-20.978-21.094-36.613-21.094-23.38 0-42.333 18.953-42.333 42.332a42.13 42.13 0 0 0 5.583 21.003c7.297 12.738 21.014 21.33 36.75 21.33 15.659 0 29.325-8.51 36.647-21.153l.241-.423 36.947 21.406c-14.65 25.597-42.228 42.851-73.835 42.851-31.549 0-59.084-17.185-73.754-42.707-7.162-12.459-11.26-26.904-11.26-42.307 0-46.95 38.061-85.013 85.014-85.013Zm75.865 70.314v9.738h9.737v9.737h-
         9.737v9.74h-9.738v-9.74h-9.738V138.9h9.738v-9.738h9.738Z"/></svg>
@@ -10,6 +21,7 @@ const Skills = () => {
     },
     {
       name: 'OOP',
+      category: 'basics',
       icon: (
         <svg viewBox="0 0 128 128" className="skill-icon">
           <circle cx="64" cy="64" r="60" fill="none" stroke="currentColor" strokeWidth="4"/>
@@ -24,6 +36,7 @@ const Skills = () => {
     },
     {
       name: 'HTML5',
+      category: 'front',
       icon: (
         <svg viewBox="0 0 128 128" className="skill-icon">
           <path fill="#E44D26" d="M19.037 113.876L9.032 1.661h109.936l-10.016 112.198-45.019 12.48z"/>
@@ -35,6 +48,7 @@ const Skills = () => {
     },
     {
       name: 'CSS3',
+      category: 'front',
       icon: (
         <svg viewBox="0 0 128 128" className="skill-icon">
           <path fill="#1572B6" d="M18.814 114.123L8.76 1.352h110.48l-10.064 112.754-45.243 12.543-45.119-12.526z"/>
@@ -48,6 +62,7 @@ const Skills = () => {
     },
     {
       name: 'JavaScript',
+      category: 'front',
       icon: (
         <svg viewBox="0 0 128 128" className="skill-icon">
           <path fill="#F0DB4F" d="M1.408 1.408h125.184v125.185H1.408z"/>
@@ -57,6 +72,7 @@ const Skills = () => {
     },
     {
       name: 'React',
+      category: 'front',
       icon: (
         <svg viewBox="0 0 128 128" className="skill-icon">
           <g fill="#61DAFB">
@@ -68,6 +84,7 @@ const Skills = () => {
     },
     {
       name: 'Vercel',
+      category: 'deploy',
       icon: (
         <svg viewBox="0 0 128 128" className="skill-icon">
           <path fill="#fff" d="M64.002 8.576L128 119.424H0L64.002 8.576z"/>
@@ -76,6 +93,7 @@ const Skills = () => {
     },
     {
       name: 'Netlify',
+      category: 'deploy',
       icon: (
         <svg viewBox="0 0 128 128" className="skill-icon">
           <path fill="#00C7B7" d="M64 0L24.8 22.4v83.2L64 128l39.2-22.4V22.4L64 0z"/>
@@ -87,6 +105,7 @@ const Skills = () => {
     },
     {
       name: 'Git',
+      category: 'front',
       icon: (
         <svg viewBox="0 0 128 128" className="skill-icon">
           <path fill="#F34F29" d="M124.737 58.378L69.621 3.264c-3.172-3.174-8.32-3.174-11.497 0L46.68 14.71l14.518 14.518c3.375-1.139 7.049-.347 9.661 2.262 2.625 2.629 3.407 6.304 2.254 9.666l13.99 13.989c3.369-1.149 7.041-.359 9.666 2.266 3.675 3.671 3.675 9.624 0 13.3-3.671 3.671-9.629 3.671-13.295 0-2.759-2.758-3.429-6.808-2.013-10.189l-13.05-13.05-.002 34.341c.922.455 1.791 1.063 2.559 1.828 3.679 3.675 3.679 9.629 0 13.297-3.675 3.671-9.621 3.671-13.3 0-3.676-3.668-3.676-9.622 0-13.297.934-.933 2.006-1.641 3.149-2.129V44.429c-1.143-.484-2.211-1.189-3.149-2.125-2.782-2.784-3.451-6.884-2.019-10.322L42.19 17.439 3.274 56.358c-3.175 3.177-3.175 8.325 0 11.5l55.117 55.114c3.174 3.174 8.32 3.174 11.499 0l54.858-54.858c3.174-3.172 3.174-8.321-.011-11.634z"/>
@@ -95,6 +114,7 @@ const Skills = () => {
     },
     {
       name: 'GitHub',
+      category: 'front',
       icon: (
         <svg viewBox="0 0 128 128" className="skill-icon">
           <g fill="#fff">
@@ -106,18 +126,59 @@ const Skills = () => {
     },
   ];
 
+  const visibleSkills =
+    activeFilter === 'all'
+      ? skills
+      : skills.filter((s) => s.category === activeFilter);
+
   return (
-    <section id="skills" className="skills">
-      <div className="container">
-        <h2 className="section-title">My Skills</h2>
-        <div className="skills-grid">
-          {skills.map((skill) => (
-            <div key={skill.name} className="skill-card">
-              <div className="skill-icon-wrapper">
-                {skill.icon}
-              </div>
+    <section id="skills" className="skills" aria-labelledby="skills-heading">
+      <div className="container skills-inner">
+        <header className="skills-header">
+          <p className="skills-eyebrow">Tech stack</p>
+          <h2 id="skills-heading" className="section-title skills-heading-title">
+            My Skills
+          </h2>
+          <div className="skills-title-accent" aria-hidden="true" />
+          <p className="skills-lead">
+            Tools and technologies I use to design, build, and ship web experiences.
+          </p>
+        </header>
+
+        <div className="skills-filter-bar">
+          <div
+            className="skills-filter"
+            role="tablist"
+            aria-label="Filter skills by category"
+          >
+            {FILTER_TABS.map(({ id, label }) => (
+              <button
+                key={id}
+                type="button"
+                role="tab"
+                id={`skill-tab-${id}`}
+                aria-selected={activeFilter === id}
+                aria-controls="skills-panel"
+                className={`skills-filter-btn ${activeFilter === id ? 'skills-filter-btn--active' : ''}`}
+                onClick={() => setActiveFilter(id)}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div
+          id="skills-panel"
+          className="skills-grid"
+          role="tabpanel"
+          aria-label="Skills in selected category"
+        >
+          {visibleSkills.map((skill) => (
+            <article key={skill.name} className="skill-card">
+              <div className="skill-icon-wrapper">{skill.icon}</div>
               <span className="skill-name">{skill.name}</span>
-            </div>
+            </article>
           ))}
         </div>
       </div>
